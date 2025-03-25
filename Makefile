@@ -1,7 +1,7 @@
 WD="./source/"
 CFLAGS = -g -Wall -std=c++11 
-INCLUDES = -I/usr/local -I/usr/include/SOIL -I../common -I./include `pkg-config --cflags glfw3` `pkg-config --cflags opencv`
-LIBS = -lm -L/usr/local/lib -lGL -lGLU -lGLEW -lSOIL `pkg-config --static --libs glfw3` `pkg-config --libs opencv`
+INCLUDES = -I/usr/local -I/usr/include/SOIL -I../common -I./include `pkg-config --cflags glfw3`
+LIBS = -lm -L/usr/local/lib -lGL -lGLU -lGLEW -lSOIL `pkg-config --static --libs glfw3` 
 CC = g++ 
 
 all: main
@@ -25,4 +25,4 @@ raytracerviewer:
 	$(CC) $(CFLAGS) $(INCLUDES) -c $(WD)RayTracerViewer.cpp -o raytracerviewer.o $(LIBS)
 
 clean:
-	rm main
+	@rm -f main *.o

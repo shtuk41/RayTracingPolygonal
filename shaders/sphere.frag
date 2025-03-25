@@ -52,7 +52,7 @@ float random(float x)
 	float f = fract(x);
 	float u = f * f *  (3.0 - 2.0 * f);
 	
-	return mix(random(i), random(i + 1.0), u);
+	return mix(i * 0.5, (i + 1.0) * 0.5, u);
 }
 
 void main(){
